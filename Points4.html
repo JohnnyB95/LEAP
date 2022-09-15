@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title> Points Result </title>
+
+        <script>
+            var baseurl = "https://rest-api-sheet-qfpivqmm4q-uc.a.run.app/" + "johnnyb123";
+            function loadPersons(){
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.open("GET",baseurl,true);
+              //var tblerror = "<table><tr><td>ERROR</td></tr></table>"
+              xmlhttp.onreadystatechange = function() {
+                if(xmlhttp.readyState ===4 && xmlhttp.status ===200){
+                  var persons = JSON.parse(xmlhttp.responseText);
+                  var tbltop = `<table border="1" align="center" width="50%">
+                      <tr><th>Id</th><th>Name</th><th>Amount</th><th>Unit</th><th>Warehouse</th></tr>`;
+                  //main table content we fill from data from the rest call
+                  var main ="";
+                  
+      
+                  for (i of persons.data.ingredient) {
+                    console.log(i);
+      
+      
+                    main += "<tr><td>"+i.id+"</td><td>"+i.name+"</td><td>"+i.amount+"</td><td>"+i.unit+"</td><td>"+i.warehouseLocation+"</td></tr>";
+                  }
+      
+                  /*for (i in persons) {
+                    console.log(persons[i]);
+                    
+                    main += "<tr><td>"+persons.data.ingredient.id+"</td><td>"+persons.data.ingredient.name+"</td><td>"+persons.data.ingredient.amount+"</td><td>"+persons.data.ingredient.unit+"</td><td>"+persons.data.ingredient.warehouseLocation+"</td></tr>";
+                  }
+                  */
+      
+                  var tblbottom = "</table>";
+                  var tbl = tbltop + main + tblbottom;
+                  document.getElementById("personinfo").innerHTML = tbl;
+                }
+                else
+                {}
+              };
+              xmlhttp.send();
+            }
+            window.onload = function(){
+              loadPersons();
+            }
+          </script>
+
+    </head>
+    <body>
+        <p> Hello World</p>
+
+        <div id="personinfo">
+        </div>
+
+        <script>
+            const formval = document.getElementById("LEAPID");
+            console.log(formval);
+        
+        </script>
+    </body>
+</html>
