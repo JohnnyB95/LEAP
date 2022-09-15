@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script>
+    <!-- <script>
       var baseurl = "https://rest-api-sheet-qfpivqmm4q-uc.a.run.app/johnnyb123";
       function loadPersons(){
         var xmlhttp = new XMLHttpRequest();
@@ -53,7 +53,7 @@
       window.onload = function(){
         loadPersons();
       }
-    </script>
+    </script> -->
 
     <style>
     .fakeimg {
@@ -69,7 +69,7 @@
 <body>
 
     <div class="jumbotron text-center" style="margin-bottom:0">
-      <h1>LEAP Points Inquiry Page</h1>
+      <h1>GOOGLE Points Inquiry Page</h1>
     </div>
 
 
@@ -79,26 +79,22 @@
           <h3>Using a FORM to retrieve data from Google Sheets</h3>
           <form action="/Points4.html" method="get" id="signup">
             <p>Please enter your LEAPID here to check your points</p>
-            <input type="text" name="LEAPID">
-            <input type="submit" value="SUBMIT">
+            <input type="text" name="LEAPID" id="LEAP_ID">
+            <input type="submit" value="SUBMIT" onclick="">
+
+            document.
           </form>
           
         <hr>
 
-        <div class="col" id="personinfo">
-         </div>
+<!--         <div class="col" id="personinfo">
+         </div> -->
          
 
         </div>
       </div>
 
     </div>
-
-<script>
-    const formval = document.getElementById("LEAPID").value;
-    console.log(formval);
-
-</script>
 
 </body>
 </html>

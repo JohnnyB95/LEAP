@@ -3,7 +3,14 @@
         <title> Points Result </title>
 
         <script>
-            var baseurl = "https://rest-api-sheet-qfpivqmm4q-uc.a.run.app/" + "johnnyb123";
+            // Get the value passed by Points3.html
+            const formval = window.location.search;
+            console.log(formval);
+            let id = formval.substr(8,10);
+            console.log (id);
+
+            // Call web service to retrieve the data from the backend
+            var baseurl = "https://rest-api-sheet-qfpivqmm4q-uc.a.run.app/" + id;
             function loadPersons(){
               var xmlhttp = new XMLHttpRequest();
               xmlhttp.open("GET",baseurl,true);
@@ -47,15 +54,12 @@
 
     </head>
     <body>
-        <p> Hello World</p>
+        <p id="LEAPID"> Hello World</p>
+
+        Here are your LEAP activities
 
         <div id="personinfo">
         </div>
 
-        <script>
-            const formval = document.getElementById("LEAPID");
-            console.log(formval);
-        
-        </script>
     </body>
 </html>
